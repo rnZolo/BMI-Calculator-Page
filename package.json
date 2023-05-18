@@ -1,0 +1,14 @@
+{
+  "name": "sample1",
+  "version": "1.0.0",
+  "description": "Practice in making portfolio",
+  "main": "index.js",
+  "scripts": {
+    "TW": "npx tailwindcss -i ./src/tailwind.css -o ./style/style.css --watch"
+  },
+  "author": "Sagge Renz",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

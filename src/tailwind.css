@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @apply relative;
+    @apply font-poppins;
+
+}
+
+.logo {
+    @apply w-[60px];
+    @apply aspect-square;
+    @apply drop-shadow-lg;
+}
+
+section {
+    @apply max-w-[1200px];
+}
+
+.input {
+    @apply w-1/2;
+    @apply font-bold;
+    @apply text-sm;
+}
+
+label[for='height'],
+label[for='weight'] {
+    @apply text-customGreen-400;
+}
+
+.bmi-calcu {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.input-number {
+    @apply rounded-lg;
+    @apply bg-myWhite;
+    @apply border;
+    @apply text-right;
+    color: #292929;
+    @apply: w-full;
+}
+
+.input-number input {
+    @apply w-full;
+    @apply h-full;
+    @apply p-3;
+    @apply rounded-lg;
+}
+
+@screen xs-scrn {
+    .some-vector-right img {
+        @apply w-full;
+        @apply h-[200px];
+        @apply overflow-visible;
+        @apply object-center;
+        @apply transition-all;
+
+    }
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.bmi-result {
+    color: white;
+    @apply font-bold;
+    @apply tracking-wider;
+}
+
+@screen tablet {
+    .some-vector-right img {
+        @apply w-1/2;
+        object-fit: cover;
+    }
+}
+
+.hls-item {
+    @apply min-h-[130px];
+    @apply w-full;
+
+}
+
+.hls-text {
+    @apply h-fit;
+    @apply text-[12px];
+    @apply font-bold;
+}
+
+.card {
+    box-shadow: rgba(107, 107, 107, 0.25) 0px 20px 100px -20px, rgba(88, 88, 88, 0.3) 0px 10px 60px -30px;
+    @apply rounded-lg;
+    @apply z-10;
+    @apply p-4;
+    @apply bg-myWhite;
+}
+
+.header h3 {
+    @apply font-bold;
+}
+
+.card p {
+    @apply font-thin;
+    @apply text-sm;
+    @apply p-3;
+    @apply h-[80%];
+    @apply grid;
+    @apply place-items-center;
+}
+
+.header span>i {
+    @apply text-2xl;
+}
+
+/* * {
+    outline: 1px dashed red;
+} */

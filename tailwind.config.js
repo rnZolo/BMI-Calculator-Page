@@ -1,0 +1,91 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ['class', '[data-mode="dark"]'],
+  content: ["./*.{html,js}"],
+  theme: {
+    screens: {
+      'xs-scrn': '300px',
+      'mobile': '450px',
+      'tablet': '640px',
+      'laptop': '1024px',
+      'desktop': '1280px',
+      'xl-scrn': '1440px',
+    },
+    colors: {
+      aquaHaze: "#EBF1F4",
+      customGray: "#fbfeff",
+      customGreen: "#329f3f",
+      myBlue: '#416BF9',
+      myWhite: '#ffff',
+      myPink: '#F7E0EC',
+      myBrown: '#F8EFE5',
+      myblack: '#292929',
+      myOrange: '#f5bf2a',
+      myViolet: '#cc58e4',
+      myYellow: '#e9f542'
+    },
+    fontFamily: {
+      graphik: ['Graphik', 'sans-serif'],
+      poppins: ['poppins', 'serif'],
+    },
+    extend: {
+      colors: {
+        'customGreen': {
+          '50': '#f2fbf3',
+          '100': '#e0f8e2',
+          '200': '#c3efc7',
+          '300': '#94e19d',
+          '400': '#5dcb6a',
+          '500': '#329f3f',
+          '600': '#289135',
+          '700': '#23722d',
+          '800': '#205b27',
+          '900': '#1c4b23',
+          '950': '#0a290f',
+        },
+        'customGray': {
+          '50': '#f5f8fa',
+          '100': '#ebf1f4',
+          '200': '#d1e0e6',
+          '300': '#a9c6d0',
+          '400': '#7aa7b6',
+          '500': '#5a8c9d',
+          '600': '#467283',
+          '700': '#3a5c6a',
+          '800': '#324f5a',
+          '900': '#2e434c',
+          '950': '#1e2c33',
+        },
+        'myPink': {
+          '50': '#fcf3f8',
+          '100': '#f7e0ec',
+          '200': '#f6d4e5',
+          '300': '#efb2d0',
+          '400': '#e482b0',
+          '500': '#d85c93',
+          '600': '#c53d72',
+          '700': '#aa2c5a',
+          '800': '#8d274b',
+          '900': '#762542',
+          '950': '#471023',
+        },
+        'myBrown': {
+          '50': '#fbf7f1',
+          '100': '#f8efe5',
+          '200': '#ecd4bc',
+          '300': '#e0b591',
+          '400': '#d29165',
+          '500': '#c97646',
+          '600': '#bb613b',
+          '700': '#9b4c33',
+          '800': '#7d3e2f',
+          '900': '#663528',
+          '950': '#361914',
+        },
+
+      }
+    },
+  },
+  plugins: [],
+}
+
