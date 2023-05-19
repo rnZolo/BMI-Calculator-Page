@@ -47,7 +47,7 @@ label[for='weight'] {
 
 .input-number input {
     @apply w-full;
-    @apply h-full;
+    @apply h-[60px];
     @apply p-3;
     @apply rounded-lg;
 }
@@ -63,8 +63,39 @@ label[for='weight'] {
     }
 }
 
+
+input[type="radio"]::before {
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 13px;
+    height: 13px;
+    border: 2px solid green;
+    border-radius: 50%;
+    background-color: rgb(57, 223, 57);
+    box-shadow: 0px 0px 2px 1px greenyellow;
+
+}
+
+
+input[type="radio"]:checked::before {
+    display: block;
+    @apply scale-125;
+    @apply transition-all;
+}
+
 input[type="number"]::-webkit-inner-spin-button {
     display: none;
+}
+
+nput[type="number"]:focus {
+    border: 1px solid green;
+}
+
+nput[type="number"] {
+    @apply outline-customGreen-500;
 }
 
 .bmi-result {
@@ -117,6 +148,7 @@ input[type="number"]::-webkit-inner-spin-button {
     @apply text-2xl;
 }
 
-/* * {
+/* 
+* {
     outline: 1px dashed red;
 } */

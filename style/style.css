@@ -534,16 +534,16 @@ video {
   left: -2%;
 }
 
-.right-2 {
-  right: 0.5rem;
+.right-3 {
+  right: 0.75rem;
 }
 
 .top-\[-5\%\] {
   top: -5%;
 }
 
-.top-\[30\%\] {
-  top: 30%;
+.top-\[55\%\] {
+  top: 55%;
 }
 
 .z-0 {
@@ -562,9 +562,22 @@ video {
   margin: 5%;
 }
 
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
 .mx-\[10\%\] {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.block {
+  display: block;
 }
 
 .inline {
@@ -577,6 +590,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .aspect-square {
@@ -705,6 +722,14 @@ video {
   border-bottom-right-radius: 9999px;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-none {
+  border-style: none;
+}
+
 .bg-customGray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(235 241 244 / var(--tw-bg-opacity));
@@ -772,6 +797,11 @@ video {
   padding: 1.5rem;
 }
 
+.py-\[20px\] {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .py-\[5\%\] {
   padding-top: 5%;
   padding-bottom: 5%;
@@ -810,6 +840,11 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-sm {
@@ -882,6 +917,11 @@ video {
   color: rgb(233 245 66 / var(--tw-text-opacity));
 }
 
+.text-myblack {
+  --tw-text-opacity: 1;
+  color: rgb(41 41 41 / var(--tw-text-opacity));
+}
+
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -906,6 +946,12 @@ video {
 
 .transition-all {
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-shadow {
+  transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -957,7 +1003,7 @@ label[for='weight'] {
 
 .input-number input {
   width: 100%;
-  height: 100%;
+  height: 60px;
   padding: 0.75rem;
   border-radius: 0.5rem;
 }
@@ -975,8 +1021,40 @@ label[for='weight'] {
   }
 }
 
+input[type="radio"]::before {
+  content: '';
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  border: 2px solid green;
+  border-radius: 50%;
+  background-color: rgb(57, 223, 57);
+  box-shadow: 0px 0px 2px 1px greenyellow;
+}
+
+input[type="radio"]:checked::before {
+  display: block;
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 input[type="number"]::-webkit-inner-spin-button {
   display: none;
+}
+
+nput[type="number"]:focus {
+  border: 1px solid green;
+}
+
+nput[type="number"] {
+  outline-color: #329f3f;
 }
 
 .bmi-result {
@@ -1032,9 +1110,25 @@ input[type="number"]::-webkit-inner-spin-button {
   line-height: 2rem;
 }
 
-/* * {
+/* 
+* {
     outline: 1px dashed red;
 } */
+
+.focus\:shadow-md:focus {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.focus\:shadow-customGreen-400:focus {
+  --tw-shadow-color: #5dcb6a;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.focus\:outline-customGreen-900:focus {
+  outline-color: #1c4b23;
+}
 
 @media (min-width: 300px) {
   .xs-scrn\:left-5 {
@@ -1047,10 +1141,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (min-width: 640px) {
-  .tablet\:w-\[45\%\] {
-    width: 45%;
-  }
-
   .tablet\:w-\[49\%\] {
     width: 49%;
   }
@@ -1065,8 +1155,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (min-width: 1280px) {
-  .desktop\:top-\[-8\%\] {
-    top: -8%;
+  .desktop\:top-\[-5\%\] {
+    top: -5%;
   }
 
   .desktop\:h-\[200px\] {
@@ -1087,6 +1177,14 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .desktop\:w-\[40\%\] {
     width: 40%;
+  }
+
+  .desktop\:w-\[45\%\] {
+    width: 45%;
+  }
+
+  .desktop\:min-w-\[500px\] {
+    min-width: 500px;
   }
 
   .desktop\:flex-row {
