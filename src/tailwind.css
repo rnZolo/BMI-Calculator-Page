@@ -180,6 +180,48 @@ input[id="theme-toggle"] {
     }
 }
 
+.tool-tip {
+    opacity: 0;
+    transform: opacity .5s ease-in-out;
+}
+
+.tool-tip::before {
+    content: ' ';
+    display: block;
+    width: 7px;
+    aspect-ratio: 2/2;
+    border-top: 4px solid #5dcb6a;
+    position: absolute;
+    border-right: 4px solid #5dcb6a;
+    transform: translateX(-4px) rotateZ(-131deg) translateY(-5px);
+}
+
+.fade {
+    opacity: 1;
+    animation: fade 2s ease-in-out forwards 2;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .5;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .3;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 /* label {
     outline: 1px dashed red;

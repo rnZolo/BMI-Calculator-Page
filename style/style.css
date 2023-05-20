@@ -530,6 +530,10 @@ video {
   position: relative;
 }
 
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -540,6 +544,10 @@ video {
 
 .right-3 {
   right: 0.75rem;
+}
+
+.right-\[70px\] {
+  right: 70px;
 }
 
 .top-0 {
@@ -586,10 +594,6 @@ video {
 
 .block {
   display: block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -641,6 +645,10 @@ video {
   width: 100px;
 }
 
+.w-\[114px\] {
+  width: 114px;
+}
+
 .w-\[30\%\] {
   width: 30%;
 }
@@ -657,12 +665,13 @@ video {
   width: 100%;
 }
 
-.w-\[200px\] {
-  width: 200px;
-}
-
 .min-w-\[300px\] {
   min-width: 300px;
+}
+
+.rotate-180 {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .flex-row {
@@ -775,14 +784,6 @@ video {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
-.bg-\[url\(\'\.\/img\/undraw_meditation_re_gll0\.svg\'\)\] {
-  background-image: url('./img/undraw_meditation_re_gll0.svg');
-}
-
-.bg-\[url\(\'\/img\/undraw_meditation_re_gll0\.svg\'\)\] {
-  background-image: url('/img/undraw_meditation_re_gll0.svg');
-}
-
 .from-aquaHaze {
   --tw-gradient-from: #EBF1F4 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(235 241 244 / 0) var(--tw-gradient-to-position);
@@ -817,6 +818,15 @@ video {
   padding: 1.5rem;
 }
 
+.p-\[2px\] {
+  padding: 2px;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .py-\[20px\] {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -847,6 +857,10 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-\[10px\] {
+  font-size: 10px;
 }
 
 .text-\[14px\] {
@@ -930,6 +944,10 @@ video {
 .text-myViolet {
   --tw-text-opacity: 1;
   color: rgb(204 88 228 / var(--tw-text-opacity));
+}
+
+.text-myWhite {
+  color: #ffff;
 }
 
 .text-myYellow {
@@ -1159,6 +1177,49 @@ input[id="theme-toggle"] {
 
   100% {
     transform: rotateY(0deg);
+  }
+}
+
+.tool-tip {
+  opacity: 0;
+  transform: opacity .5s ease-in-out;
+}
+
+.tool-tip::before {
+  content: ' ';
+  display: block;
+  width: 7px;
+  aspect-ratio: 2/2;
+  border-top: 4px solid #5dcb6a;
+  position: absolute;
+  border-right: 4px solid #5dcb6a;
+  transform: translateX(-4px) rotateZ(-131deg) translateY(-5px);
+}
+
+.fade {
+  opacity: 1;
+  animation: fade 2s ease-in-out forwards 2;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .5;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: .3;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
