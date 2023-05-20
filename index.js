@@ -35,7 +35,9 @@ localStorage.theme = 'dark'
 // Whenever the user explicitly chooses to respect the OS preference
 localStorage.removeItem('theme')
 
-
+$(document).ready(() => {
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : setLight()
+})
 
 const metric = $('.metric'),
     imperial = $('.imperial'),
@@ -85,9 +87,6 @@ function calculateBMI() {
         let height = Number($('.h-input').val())
         let weight = Number($('.w-input').val())
         let result = weight / ((height / 100) * (height / 100))
-        console.log(height)
-        console.log(weight)
-        console.log(result)
         $('.result').css('display', 'grid')
         $('.welcome-text').css('display', 'none')
         $('.BMI-computation').text(result.toFixed(1))
@@ -96,9 +95,6 @@ function calculateBMI() {
         let height = Number($('.h-input').val())
         let weight = Number($('.w-input').val())
         let result = (weight / (height * height)) * 703
-        console.log(height)
-        console.log(weight)
-        console.log(result)
         $('.result').css('display', 'grid')
         $('.welcome-text').css('display', 'none')
         $('.BMI-computation').text(result.toFixed(1))
@@ -141,3 +137,32 @@ function defaultText() {
     $('.h-input').text('')
     $('.w-input').text('')
 }
+
+
+$('#theme-toggle').change((event) => {
+    if (event.target.checked) {
+        $('.welcome-text').text('checked!');
+        localStorage.theme = 'dark'
+        document.documentElement.classList.replace('light', 'dark')
+        $('.center-sec').attr('src', './img/undraw_meditation_re_gll0.svg')
+        console.log('checked');
+    } else {
+        $('.welcome-text').text('unchecked!');
+        localStorage.theme = 'light'
+        document.documentElement.classList.replace('dark', 'light')
+        $('.center-sec').attr('src', './img/undraw_indoor_bike_pwa4.svg')
+        console.log('unchecked');
+    }
+});
+
+function setLight() {
+    localStorage.setItem('theme', 'light')
+    document.documentElement.classList.add('light')
+}
+
+$('#theme-toggle').change(() => {
+    $('img[src="./img/logo.svg"]').addClass('flip');
+    setTimeout(() => {
+        $('img[src="./img/logo.svg"]').removeClass('flip');
+    }, 300); // Adjust the duration of the animation here (in milliseconds)
+});

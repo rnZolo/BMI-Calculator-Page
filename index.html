@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth w-full">
+<html lang="en" class="scroll-smooth w-full dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./img/logo.svg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=VT323&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/910cc9fb7b.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -14,22 +15,16 @@
     <script src="./index.js" defer></script>
     <title>BMI Calculator</title>
 </head>
-<body class="w-full h-screen bg-customGray-100">
+<body class="w-full h-screen bg-customGray-100 dark:bg-customGray-900">
     <div class="rect-bg bg-gradient-to-br from-aquaHaze from-10% to-customGreen-400 t0-90% w-full h-[500px] m-2 z-0 shadow-md shadow-customGreen-800
     rounded-lg absolute top-[-5%] left-[-2%] desktop::w-[1000px] xl-scrn:w-[1000px]"></div>
-    <div class="logo absolute desktop:top-[-5%] xs-scrn:left-5 xs-scrn:top=[-10%] transition-all">
-        <img src="./img/logo.svg" alt="logo">
-    </div>
     <main class="dark:bg-slate-800 z-10">
-
-        <!-- <div class="mode-Btn">
-            <label for="light">
-                <input type="radio" name="theme" value="light" id="light" >
+        <div class="logo absolute  xs-scrn:left-5 desktop:top-[-50px] mobile:top-[-20px] xs-scrn:top-[-10px] transition-all">
+            <label for="theme-toggle" class="relative block w-full h-full">
+                <input class="absolute w-full h-full top-0 left-0" type="checkbox" name="theme" value="dark" id="theme-toggle" >
+                <img src="./img/logo.svg" alt="logo" class=>
             </label>
-            <label for="dark">
-                <input type="radio" name="theme" value="dark" id="dark">
-            </label>
-        </div> -->
+        </div>
         <section class="bmi h-fit m-[5%] flex  flex-col desktop:flex-row">
                 <div class="left-intro p-5 text-center flex flex-col gap-5">
                     <h1 class="main-heading capitalize text-4xl font-bold">body mass <br> index calculator</h1>
@@ -49,9 +44,9 @@
                         <label for="height" class="input input-number border-none relative"><span class="block w-full text-left text-myblack mb-2">Height</span><input type="number" min="0" name="height" id="height" class="h-input border border-customGreen-500-customGreen-500 focus:outline-customGreen-900  focus:shadow-customGreen-400 focus:shadow-md transition-shadow"> <span class="h-uom absolute  top-[55%] right-3">Unit</span></label>
                         <label for="weight" class="input input-number border-none  relative"><span class="block w-full text-left text-myblack mb-2">Weight</span><input type="number" min="0" name="weight" id="weight" class="w-input border border-customGreen-500-customGreen-500 focus:outline-customGreen-900 focus:shadow-customGreen-400 focus:shadow-md transition-shadow"> <span class="w-uom absolute  top-[55%] right-3">Unit</span></label>
                     </fieldset>
-                    <div class="bmi-result bg-customGreen-500 h-[100px]  p-4 rounded-r-full flex flex-row gap-5 ">
-                        <span class="result w-[30%] h-full text-white p-2 text-xs text-left place-items-center hidden">
-                            Your BMI is .... <span class="BMI-computation grid h-full place-items-center text-4xl " >27</span>
+                    <div class="bmi-result bg-customGreen-500 h-[100px] xs-scrn:p-2 tablet:p-4 rounded-r-full flex flex-row gap-3 ">
+                        <span class="result w-[30%] h-full text-white p-2 text-xs xs-scrn:p-0 text-center place-items-center hidden">
+                            Your BMI is <span class="BMI-computation grid h-full place-items-center text-4xl " >27</span>
                         </span>
                         <span class="welcome-text text-lg py-[20px]"></span>
                         <span class="some-explanation w-[70%] text-xs grid place-items-center  text-white">
@@ -63,11 +58,11 @@
         <section class="your-bmi-means mx-[10%] h-fit py-[5%]  flex flex-col gap-[40px]">
             <div class="sec-wrapper flex flex-col w-full tablet:flex-row">
                 <div class="some-vector-right w-full table:w-1/2 grid place-items-center">
-                    <img src="./img/undraw_indoor_bike_pwa4.svg" alt="health lifestyle " class="drop-shadow-2xl">
+                    <img src="./img/undraw_indoor_bike_pwa4.svg" alt="health lifestyle " class="drop-shadow-2xl center-sec">
                 </div>
                 <div class="some-bmi-info w-full table:w-1/2 p-3 pt-10 flex flex-col gap-2">
-                    <h2 class="text-2xl font-bold">What your BMI Result means</h2>
-                    <p class="some-info text-sm tracking-wider text-left font-bold">
+                    <h2 class="text-2xl font-bold dark:text-myWhite">What your BMI Result means</h2>
+                    <p class="some-info text-sm tracking-wider text-left font-bold dark:text-myWhite">
                         A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
                         Maintaining a healthy weight may lower your chances of experiencing health issues later on, such as
                         obesity and type 2 diabetes. Aim for a nutritious diet with reduced fat and sugar content, incorportating ample fruits and vegetables. Additionally, 
@@ -83,8 +78,8 @@
                         </span>
                     </span>
                     <div class="flex flex-col w-full gap-2">
-                        <h3 class="text-left font-bold text-xl">Healty Eating</h3>
-                        <p class="hls-text text-sm text-center h-full"> Healthy eating promotes weight control, disease prevention, better digestion, imunity, mental clarity, and mood.</p>
+                        <h3 class="text-left font-bold text-xl dark:text-myWhite">Healty Eating</h3>
+                        <p class="hls-text text-sm text-center h-full dark:text-myWhite"> Healthy eating promotes weight control, disease prevention, better digestion, imunity, mental clarity, and mood.</p>
                     </div>
                 </div>
                 <div class="hls-item regular-exercise flex flex-row gap-2">
@@ -94,8 +89,8 @@
                         </span>
                     </span>
                     <div class="flex flex-col w-full h-fit gap-2">
-                        <h3 class="text-left font-bold text-xl">Regular Exercise</h3>
-                        <p class="hls-text text-sm text-center h-fit"> Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity.</p>
+                        <h3 class="text-left font-bold text-xl dark:text-myWhite">Regular Exercise</h3>
+                        <p class="hls-text text-sm text-center h-fit dark:text-myWhite"> Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity.</p>
                     </div>
                 </div>
                 <div class="hls-item adequate-sleep flex flex-row gap-2">
@@ -105,8 +100,8 @@
                         </span>
                     </span>
                     <div class="flex flex-col w-full gap-2">
-                        <h3 class="text-left font-bold text-xl">Adequate Sleep</h3>
-                        <p class="hls-text text-sm text-center h-full"> Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation.</p>
+                        <h3 class="text-left font-bold text-xl dark:text-myWhite">Adequate Sleep</h3>
+                        <p class="hls-text text-sm text-center h-full dark:text-myWhite"> Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation.</p>
                     </div>
                 </div>
             </div>
@@ -114,11 +109,11 @@
         <section class="bmi-limitation h-fit m-[5%] mx-[10%] flex flex-row flex-wrap gap-3 tablet:justify-center">
             <div class="class-holder w-full desktop:w-2/5">
                 <div class=" h-full w-full flex flex-col justify-around">
-                    <h3 class="limitation text-center text-2xl font-bold tracking-wide">Limitation of BMI</h3>
-                    <p class="some-limitation w-full text-center text-[14px]">
+                    <h3 class="limitation text-center text-2xl font-bold tracking-wide dark:text-myWhite">Limitation of BMI</h3>
+                    <p class="some-limitation w-full text-center text-[14px] dark:text-myWhite">
                         Although BMI is often a practical indicator of healthy weight, it is not suited for every person. Specific groups should carefully consider their BMI outcomes and in certain cases, 
                         the measurement may not be beneficial to use.
-                    </p>
+                    </p> 
                 </div>
             </div>
             <div class="class-holder tablet:w-[49%] xs:w-full flex desktop:justify-center">
@@ -142,7 +137,7 @@
                         </span>
                         <h3>Age</h3>
                     </div>
-                    <p class="text-left p-4">In aging indidviduals, increased body fat and muscle loss my cause BMI to
+                    <p class="text-left p-4">In aging individuals, increased body fat and muscle loss my cause BMI to
                         underestimate body fat content.
                     </p>
                 </div>
