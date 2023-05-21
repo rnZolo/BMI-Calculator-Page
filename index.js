@@ -1,14 +1,14 @@
 
 
 $(document).ready(() => {
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : setLight()
-
-    setTimeout(() => {
-        $('.tool-tip').addClass('fade')
-    }, 1000)
-    setTimeout(() => {
-        $('.tool-tip').removeClass('fade')
-    }, 6000)
+    localStorage.getItem("theme") ? setMode() : setLight()
+    localStorage.getItem('info') === null ? toolInfo() : localStorage.setItem('info', 'true')
+    let whatImage = localStorage.theme
+    if (whatImage === 'dark') {
+        $('.center-sec').attr('src', './img/undraw_meditation_re_gll0.svg')
+    } else {
+        $('.center-sec').attr('src', './img/undraw_indoor_bike_pwa4.svg')
+    }
 })
 
 const metric = $('.metric'),
@@ -109,32 +109,42 @@ function defaultText() {
     $('.h-input').text('')
     $('.w-input').text('')
 }
-
-
-$('#theme-toggle').change((event) => {
-    if (event.target.checked) {
-        $('.welcome-text').text('checked!');
-        localStorage.theme = 'dark'
-        document.documentElement.classList.replace('light', 'dark')
-        $('.center-sec').attr('src', './img/undraw_meditation_re_gll0.svg')
-        console.log('checked');
-    } else {
-        $('.welcome-text').text('unchecked!');
-        localStorage.theme = 'light'
-        document.documentElement.classList.replace('dark', 'light')
-        $('.center-sec').attr('src', './img/undraw_indoor_bike_pwa4.svg')
-        console.log('unchecked');
-    }
-});
-
-function setLight() {
-    localStorage.setItem('theme', 'light')
-    document.documentElement.classList.add('light')
+function toolInfo() {
+    localStorage.setItem('info', 'true')
+    setTimeout(() => {
+        $('.tool-tip').addClass('fade')
+    }, 1000)
+    setTimeout(() => {
+        $('.tool-tip').removeClass('fade')
+    }, 6000)
 }
 
-$('#theme-toggle').change(() => {
+$('#theme-toggle').change((event) => {
     $('img[src="./img/logo.svg"]').addClass('flip');
     setTimeout(() => {
         $('img[src="./img/logo.svg"]').removeClass('flip');
-    }, 300); // Adjust the duration of the animation here (in milliseconds)
+    }, 300);
+    if (event.target.checked) {
+        setDark()
+        $('.center-sec').attr('src', './img/undraw_meditation_re_gll0.svg')
+    } else {
+        setLight()
+        $('.center-sec').attr('src', './img/undraw_indoor_bike_pwa4.svg')
+    }
 });
+function setMode() {
+    let mode = localStorage.theme
+    if (mode === 'dark') {
+        setDark()
+    } if (mode === 'light') {
+        setLight()
+    }
+}
+function setLight() {
+    localStorage.setItem('theme', 'light')
+    document.documentElement.classList.replace('dark', 'light')
+}
+function setDark() {
+    localStorage.setItem('theme', 'dark')
+    document.documentElement.classList.replace('light', 'dark')
+}
