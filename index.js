@@ -148,3 +148,16 @@ function setDark() {
     localStorage.setItem('theme', 'dark')
     document.documentElement.classList.replace('light', 'dark')
 }
+
+$(window).scroll(function () {
+    $('.animate__animated').each(function () {
+        var elementBottom = $(this).offset().top + $(this).outerHeight();
+        var viewportBottom = $(window).scrollTop() + $(window).height();
+
+        if (elementBottom < viewportBottom) {
+            $(this).addClass('animate__animated animate__slideInUp');
+        }
+    });
+});
+
+
